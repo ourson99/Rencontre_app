@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "5314746033",
+    "project_id": "meeting-app-social",
+    "storage_bucket": "meeting-app-social.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:5314746033:android:872154c47c3e94a134b490",
+        "android_client_info": {
+          "package_name": "com.example.rencontre20"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAPMzmFTa50eNL1ZqFtwLHmPseMJ5rQIVg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

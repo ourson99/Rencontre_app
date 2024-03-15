@@ -29,6 +29,8 @@ public class RightActivity extends AppCompatActivity
                 {
                     Intent i = new Intent(RightActivity.this, LandingActivity.class);
                     startActivity(i);
+                    finish();
+
                 }
         }
         return false;
