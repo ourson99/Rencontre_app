@@ -30,7 +30,7 @@ public class LeftActivity extends AppCompatActivity
 
         if(user == null)
         {
-            Intent intent = new Intent(getApplicationContext(), L_Login.class);
+            Intent intent = new Intent(getApplicationContext(), L_LoginBottomSheetDialogFragment.class);
             startActivity(intent);
             finish();
         }
