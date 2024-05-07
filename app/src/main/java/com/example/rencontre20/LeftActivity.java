@@ -14,39 +14,39 @@ import com.google.firebase.auth.FirebaseUser;
 public class LeftActivity extends AppCompatActivity
 {
     FirebaseAuth auth;
-    Button button;
-    TextView textView;
+    Button logoutButton;
+    TextView email;
     FirebaseUser user;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.left_page);
+        setContentView(R.layout.left_page_layout);
 
         auth = FirebaseAuth.getInstance();
-        button = findViewById(R.id.logout);
-        textView = findViewById(R.id.user_details);
+        logoutButton = findViewById(R.id.logout);
+        email = findViewById(R.id.textEmail);
         user = auth.getCurrentUser();
 
         if(user == null)
         {
-            Intent intent = new Intent(getApplicationContext(), Login.class);
+            Intent intent = new Intent(getApplicationContext(), L_Login.class);
             startActivity(intent);
             finish();
         }
         else
         {
-            textView.setText(user.getEmail());
+            email.setText(user.getEmail());
         }
 
-        button.setOnClickListener(new View.OnClickListener()
+        logoutButton.setOnClickListener(new View.OnClickListener()
         {
             @Override
             public void onClick(View view)
             {
                 FirebaseAuth.getInstance().signOut();
 
-                Intent intent = new Intent(getApplicationContext(), Login.class);
+                Intent intent = new Intent(getApplicationContext(), L_LandingActivity.class);
                 startActivity(intent);
                 finish();
             }
@@ -65,7 +65,7 @@ public class LeftActivity extends AppCompatActivity
                 x2 = touchEvent.getX();
                 if (x1 > x2)
                 {
-                    Intent i = new Intent(LeftActivity.this, LandingActivity.class);
+                    Intent i = new Intent(LeftActivity.this, SwipingActivity.class);
                     startActivity(i);
                     finish();
                 }

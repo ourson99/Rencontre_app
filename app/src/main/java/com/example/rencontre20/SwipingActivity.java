@@ -9,8 +9,6 @@ import android.Manifest;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.content.pm.PackageManager;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.view.MotionEvent;
 
@@ -22,7 +20,7 @@ import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
-public class LandingActivity extends AppCompatActivity implements OnMapReadyCallback
+public class SwipingActivity extends AppCompatActivity implements OnMapReadyCallback
 {
 
     private GoogleMap mMap;
@@ -52,13 +50,13 @@ public class LandingActivity extends AppCompatActivity implements OnMapReadyCall
                 x2 = touchEvent.getX();
                 if(x1 < x2)
                 {
-                    Intent i = new Intent(LandingActivity.this, LeftActivity.class);
+                    Intent i = new Intent(SwipingActivity.this, LeftActivity.class);
                     startActivity(i);
                     finish();
                 }
                 else if (x1 > x2)
                 {
-                    Intent i = new Intent(LandingActivity.this, RightActivity.class);
+                    Intent i = new Intent(SwipingActivity.this, RightActivity.class);
                     startActivity(i);
                     finish();
                 }

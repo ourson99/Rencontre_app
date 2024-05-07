@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:gravity="center"
     android:padding="15dp"
-    tools:context=".Register">
+    tools:context=".L_Register">
 
     <TextView
         android:text="@string/register"

@@ -27,10 +27,9 @@ public class RightActivity extends AppCompatActivity
                 x2 = touchEvent.getX();
                 if(x1 < x2)
                 {
-                    Intent i = new Intent(RightActivity.this, LandingActivity.class);
+                    Intent i = new Intent(RightActivity.this, SwipingActivity.class);
                     startActivity(i);
                     finish();
-
                 }
         }
         return false;
