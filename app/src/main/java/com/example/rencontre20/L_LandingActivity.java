@@ -4,9 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-
 import androidx.appcompat.app.AppCompatActivity;
-
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
@@ -18,10 +16,12 @@ public class L_LandingActivity extends AppCompatActivity
 
 
     @Override
-    public void onStart() {
+    public void onStart()
+    {
         super.onStart();
         FirebaseUser currentUser = mAuth.getCurrentUser();
-        if(currentUser != null){
+        if(currentUser != null)
+        {
             Intent intent = new Intent(getApplicationContext(), SwipingActivity.class);
             startActivity(intent);
             finish();
@@ -31,7 +31,8 @@ public class L_LandingActivity extends AppCompatActivity
 
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState)
+    {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.landing_activity);
 
@@ -55,7 +56,6 @@ public class L_LandingActivity extends AppCompatActivity
             @Override
             public void onClick(View view)
             {
-                // Show the bottom sheet register dialog fragment
                 L_RegisterBottomSheetDialogFragment LRegisterBottomSheetDialogFragment = new L_RegisterBottomSheetDialogFragment();
                 LRegisterBottomSheetDialogFragment.show(getSupportFragmentManager(), LRegisterBottomSheetDialogFragment.getTag());
             }

@@ -43,41 +43,72 @@
                     app:srcCompat="@drawable/circles" />
 
                 <ImageView
-                    android:id="@+id/imageView2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:id="@+id/profilePicture"
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginBottom="16dp"
+                    android:scaleType="centerCrop"
                     android:src="@drawable/profile"
                     app:layout_constraintBottom_toBottomOf="@+id/view"
                     app:layout_constraintEnd_toEndOf="@+id/view"
                     app:layout_constraintStart_toStartOf="@+id/view"
                     app:layout_constraintTop_toTopOf="@+id/imageView"
-                    app:layout_constraintVertical_bias="0.248"
-                    app:srcCompat="@drawable/profile" />
+                    app:layout_constraintVertical_bias="0.13999999"
+                    app:srcCompat="@drawable/user_icon_profile" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/start_guideline"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.04" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/end_guideline"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.96" />
 
                 <TextView
                     android:id="@+id/textName"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
-                    android:text="Your name"
+                    android:text=""
                     android:textColor="#ffffff"
                     android:textSize="20dp"
                     android:textStyle="bold"
-                    app:layout_constraintEnd_toEndOf="@+id/imageView2"
-                    app:layout_constraintStart_toStartOf="@+id/imageView2"
-                    app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+                    app:layout_constraintEnd_toEndOf="@+id/profilePicture"
+                    app:layout_constraintStart_toStartOf="@+id/profilePicture"
+                    app:layout_constraintTop_toBottomOf="@+id/profilePicture" />
 
                 <TextView
                     android:id="@+id/textEmail"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="5dp"
-                    android:text="Your email"
+                    android:text=""
                     android:textColor="#ffffff"
                     android:textSize="18sp"
                     app:layout_constraintEnd_toEndOf="@+id/textName"
                     app:layout_constraintStart_toStartOf="@+id/textName"
                     app:layout_constraintTop_toBottomOf="@+id/textName" />
+
+                <TextView
+                    android:id="@+id/textDescr"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="3dp"
+                    android:text=""
+                    android:textColor="#ffffff"
+                    android:textSize="15sp"
+                    app:layout_constraintEnd_toEndOf="@+id/view"
+                    app:layout_constraintStart_toStartOf="@+id/view"
+                    app:layout_constraintTop_toBottomOf="@+id/textEmail" />
 
                 <LinearLayout
                     android:id="@+id/linearLayout"
@@ -99,49 +130,8 @@
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="horizontal">
-
-                        <LinearLayout
-                            android:id="@+id/linearLayout2"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_margin="10dp"
-                            android:layout_weight="0.333"
-                            android:background="@drawable/grey_background"
-                            android:elevation="5dp"
-                            android:orientation="vertical">
-
-                            <androidx.constraintlayout.widget.ConstraintLayout
-                                android:layout_width="60dp"
-                                android:layout_height="60dp"
-                                android:layout_gravity="center_horizontal"
-                                android:layout_marginTop="10dp"
-                                android:background="@drawable/oval_background">
-
-                                <ImageView
-                                    android:id="@+id/notificationImage"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:src="@drawable/notification"
-                                    app:layout_constraintBottom_toBottomOf="parent"
-                                    app:layout_constraintEnd_toEndOf="parent"
-                                    app:layout_constraintStart_toStartOf="parent"
-                                    app:layout_constraintTop_toTopOf="parent"
-                                    app:srcCompat="@drawable/notification" />
-
-                            </androidx.constraintlayout.widget.ConstraintLayout>
-
-                            <TextView
-                                android:id="@+id/notificationText"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_marginBottom="8dp"
-                                android:text="Notification"
-                                android:textAlignment="center"
-                                android:textColor="#000000"
-                                android:textSize="13sp"
-                                android:textStyle="bold" />
-                        </LinearLayout>
+                        android:orientation="horizontal"
+                        >
 
                         <LinearLayout
                             android:id="@+id/settings"
@@ -196,17 +186,17 @@
                         android:orientation="horizontal">
 
                         <TextView
-                            android:id="@+id/emailText"
+                            android:id="@+id/nameText"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:text="Email"
+                            android:text="Name"
                             android:textColor="#0F7015"
 
                             android:textSize="18sp" />
 
                         <TextView
-                            android:id="@+id/changeEmail"
+                            android:id="@+id/changeName"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
@@ -237,62 +227,21 @@
                         android:orientation="horizontal">
 
                         <TextView
-                            android:id="@+id/passwordText"
+                            android:id="@+id/descriptionText"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:text="Password"
+                            android:text="Description"
                             android:textColor="#0F7015"
 
                             android:textSize="18sp" />
 
                         <TextView
-                            android:id="@+id/changePassword"
+                            android:id="@+id/changeDescription"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:text="Change"
-                            android:textAlignment="textEnd"
-                            android:textColor="#5b5b5b"
-                            android:textSize="16sp" />
-
-                    </LinearLayout>
-
-                    <View
-                        android:id="@+id/line2"
-                        android:layout_width="match_parent"
-                        android:layout_height="1dp"
-                        android:layout_marginStart="10dp"
-                        android:layout_marginTop="6dp"
-                        android:layout_marginEnd="10dp"
-                        android:layout_marginBottom="6dp"
-                        android:background="#d9d9d9d9" />
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="10dp"
-                        android:layout_marginTop="10dp"
-                        android:layout_marginEnd="10dp"
-                        android:layout_marginBottom="10dp"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            android:id="@+id/placeholderText1"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:text="placeholderText1"
-                            android:textColor="#0F7015"
-
-                            android:textSize="18sp" />
-
-                        <TextView
-                            android:id="@+id/placeholderChange1"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:text="placeholderChange1"
                             android:textAlignment="textEnd"
                             android:textColor="#5b5b5b"
                             android:textSize="16sp" />
@@ -319,21 +268,21 @@
                         android:orientation="horizontal">
 
                         <TextView
-                            android:id="@+id/placeholderText2"
+                            android:id="@+id/pictureText"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:text="placeholderText2"
+                            android:text="Picture"
                             android:textColor="#0F7015"
 
                             android:textSize="18sp" />
 
                         <TextView
-                            android:id="@+id/placeholderChange2"
+                            android:id="@+id/changePicture"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:text="placeholderChange2"
+                            android:text="Change"
                             android:textAlignment="textEnd"
                             android:textColor="#5b5b5b"
                             android:textSize="16sp" />
@@ -350,37 +299,6 @@
                         android:layout_marginBottom="6dp"
                         android:background="#d9d9d9d9" />
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="10dp"
-                        android:layout_marginTop="10dp"
-                        android:layout_marginEnd="10dp"
-                        android:layout_marginBottom="10dp"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            android:id="@+id/placeholderText3"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:text="placeholderText3"
-                            android:textColor="#0F7015"
-
-                            android:textSize="18sp" />
-
-                        <TextView
-                            android:id="@+id/placeholderChange3"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:text="placeholderChange3"
-                            android:textAlignment="textEnd"
-                            android:textColor="#5b5b5b"
-                            android:textSize="16sp" />
-
-                    </LinearLayout>
-
                 </LinearLayout>
 
                 <androidx.appcompat.widget.AppCompatButton
@@ -393,6 +311,17 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/right_arrow_left"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/right_arrow_green"
+                    android:text=""
+                    android:visibility="visible"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/logout" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 

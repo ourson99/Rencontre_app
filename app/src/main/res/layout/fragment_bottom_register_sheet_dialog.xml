@@ -19,28 +19,19 @@
         android:hint="Password"/>
 
     <EditText
+        android:id="@+id/nameEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Nom"
+        android:inputType="textPassword" />
+
+    <EditText
         android:id="@+id/phoneEditText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="123-456-789"
         android:inputType="number" />
 
-
-    <ImageView
-        android:id="@+id/profilePicture"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:src="@drawable/add_img" />
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginBottom="15dp"
-        android:gravity="center"
-        android:text="Add a profile picture" />
 
     <Button
         android:id="@+id/registerButton"
